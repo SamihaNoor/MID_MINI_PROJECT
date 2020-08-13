@@ -25,27 +25,9 @@
 				
 				if($result)
 				{
-					$user = [
-						'id'=>$id,
-						'name'=>$name,
-						'email'=>$email,
-						'password'=>$password,
-						'type'=>$type,
-					];
-
-					$_SESSION['user']=$user;
-					
-					//setcookie('user', $user, time()+3600,'/');
-					
-					/*$_COOKIE['id'] = $id;
-					$_COOKIE['password']= $password;
-					
-					/*setcookie('username', $uname, time()+3600, '/');
-					setcookie('password', $password, time()+3600, '/');*/
-						
+					$_SESSION['id']=$id;
 					mysqli_close($con);
-					
-					header("location: login.html");
+					header("location: login.php");
 				}
 				else
 				{
@@ -58,6 +40,6 @@
 			}
 		}
 	}else{
-		header("location: login.html");
+		header("location: reg.html");
 	}
 ?>
